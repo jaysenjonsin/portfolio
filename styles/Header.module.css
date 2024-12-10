@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 15vh;
+  background-color: red;
 }
 
 .navLinks {
   display: flex;
   list-style: none;
-  gap: 2px;
+  gap: 2rem;
 }
