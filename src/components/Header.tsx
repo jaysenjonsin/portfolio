@@ -3,6 +3,8 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { Button } from './ui/button';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -72,7 +74,95 @@ export function Header() {
             </li>
           </ul>
         </nav>
+
+        <div className='flex items-center gap-2'>
+          {mounted && (
+            <Button
+              variant='ghost'
+              size='icon'
+              onClick={toggleTheme}
+              className='rounded-full'
+            >
+              {theme === 'dark' ? (
+                <Sun className='h-5 w-5' />
+              ) : (
+                <Moon className='h-5 w-5' />
+              )}
+              <span className='sr-only'>Toggle Theme</span>
+            </Button>
+          )}
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant='ghost'
+            size='icon'
+            className='block md:hidden'
+            onClick={toggleMenu}
+          >
+            {mobileMenuOpen ? (
+              <X className='h-5 w-5' /> //close icon
+            ) : (
+              <Menu className='h-5 w-5' /> //open icon
+            )}
+            <span className='sr-only'>Toggle menu</span>
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <div className='container mx-auto px-4 md:hidden'>
+          <nav className='pb-4'>
+            <ul className='flex flex-col space-y-4'>
+              <li>
+                <Link
+                  href='#home'
+                  className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+                  onClick={toggleMenu}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='#about'
+                  className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+                  onClick={toggleMenu}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='#skills'
+                  className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+                  onClick={toggleMenu}
+                >
+                  Skills
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='#projects'
+                  className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+                  onClick={toggleMenu}
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='#contact'
+                  className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+                  onClick={toggleMenu}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
