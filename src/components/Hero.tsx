@@ -35,8 +35,8 @@ export function Hero() {
           </span>
         </h2>
         <p className='mx-auto mb-10 max-w-2xl text-lg text-muted-foreground'>
-          I build responsive, accessbile, and performant web applications with
-          modern technologies.
+          I build responsive, accessible, and performant web applications with
+          modern technologies. Currently @ Glassdoor.
         </p>
         <div className='mb-12 flex justify-center space-x-4'>
           <Button
@@ -61,7 +61,7 @@ export function Hero() {
             className='rounded-full'
           >
             <a
-              href='https://linkedin.com'
+              href='https://linkedin.com/in/jasoncjohnson5'
               target='_blank'
               rel='noopener noreferrer'
             >
