@@ -51,14 +51,14 @@ export default function Home() {
                 — GitHub
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href='https://github.com/jaysenjonsin'
                 className='hover:underline inline-flex items-center'
               >
                 — github
               </Link>
-            </li>
+            </li> */}
           </ul>
         </section>
       </main>
