@@ -8,6 +8,7 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  //prevent hydration mismatch - server and client may have diff themes before initial render, so we wait until mounted to show the toggle
   useEffect(() => {
     setMounted(true);
   }, []);

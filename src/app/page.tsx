@@ -19,6 +19,15 @@ export default function Home() {
           <ThemeToggle />
         </nav>
       </header>
+      <main className='flex-1 py-16'>
+        <section className='mb-16'>
+          <h1 className='text-3xl font-mono mb-8'>👋 Hi</h1>
+          <p className='font-mono text-sm leading-relaxed max-w-lg'>
+            I'm a Full Stack Developer focused on building responsive,
+            accessible, and performant web application with modern technologies.
+          </p>
+        </section>
+      </main>
     </div>
   );
 }
