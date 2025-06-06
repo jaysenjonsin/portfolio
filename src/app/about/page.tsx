@@ -6,7 +6,6 @@ import { Footer } from '../../components/footer';
 export default function About() {
   return (
     <div>
-      <Header />
       <div>
         Outside of work, you can find me reading, gymming, making music or going
         to the movies!
@@ -106,7 +105,6 @@ export default function About() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }
