@@ -4,7 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
-import SubtleBackground from '../components/subtle-background';
+import ThreeBackground from '../components/three-background';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className='min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8'>
-            <SubtleBackground />
+            <ThreeBackground />
             <Header />
             {children}
             <Footer />
