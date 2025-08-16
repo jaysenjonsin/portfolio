@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${mono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${mono.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute='class'
@@ -35,7 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8'>
+          <div className='min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8 border-0.5 border-gray-300 dark:border-gray-800 rounded-lg'>
             <Header />
             {children}
             <Footer />
