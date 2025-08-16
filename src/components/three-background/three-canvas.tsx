@@ -8,7 +8,7 @@ import Ambience from './ambience';
 
 export default function ThreeCanvas() {
   return (
-    <div className='fixed inset-0 -z-10'>
+    <div className='absolute inset-0 -z-10'>
       <Canvas
         orthographic
         camera={{ position: [0, 0, 100], zoom: 100 }}

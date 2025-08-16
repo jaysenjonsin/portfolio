@@ -4,13 +4,14 @@ import { useFrame } from '@react-three/fiber';
 import { Environment, Lightformer } from '@react-three/drei';
 
 export default function Ambience() {
-  // Swirl camera around (we're inside the render texture)
+  // Smooth constant rotation around the sphere
   useFrame((state) => {
-    const t = state.clock.elapsedTime / 3;
+    const t = state.clock.elapsedTime / 2; // Slow, smooth rotation
+    const radius = 15;
     state.camera.position.set(
-      Math.sin(t) * Math.PI * 10,
-      Math.atan(t) * Math.PI * 4,
-      Math.cos(t) * Math.PI * 10
+      Math.sin(t) * radius, // Smooth circular motion
+      Math.sin(t * 0.3) * 3, // Gentle vertical drift
+      Math.cos(t) * radius // Circular motion
     );
     state.camera.lookAt(0, 0, 0);
   });

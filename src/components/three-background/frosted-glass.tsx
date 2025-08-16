@@ -29,15 +29,18 @@ export default function FrostedGlass({ children }: FrostedGlassProps) {
     return () => observer.disconnect();
   }, []);
 
-  // Adjust properties based on theme
+  // Enhanced grain and contrast for both modes
   const glassProps = {
-    samples: 16,
-    thickness: 0.1,
-    chromaticAberration: 0,
-    anisotropy: 1,
-    roughness: isDark ? 1 : 0.8, // Less roughness in light mode for more clarity
+    samples: isDark ? 1 : 3, // More samples in dark mode for finer grain detail
+    thickness: 0.15,
+    chromaticAberration: isDark ? 0.02 : 0.02, // More chromatic aberration in dark mode for grain
+    anisotropy: isDark ? 2 : 1.5, // Higher anisotropy in dark mode for more grain directionality
+    roughness: isDark ? 0.9 : 0.8, // Higher roughness in dark mode for more grain texture
     transparent: true,
-    opacity: isDark ? 0.9 : 0.7, // More transparent in light mode
+    opacity: isDark ? 0.95 : 0.7, // Less transparent in dark mode for stronger contrast
+    distortion: isDark ? 0.9 : 0.9, // Much more distortion in dark mode for grain effect
+    distortionScale: isDark ? 0.5 : 0.3, // Stronger scaling in dark mode for pronounced grain
+    temporalDistortion: isDark ? 0.08 : 0.05, // More temporal distortion in dark mode
   };
 
   return (

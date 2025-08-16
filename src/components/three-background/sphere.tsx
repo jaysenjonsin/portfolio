@@ -30,13 +30,13 @@ export default function Sphere() {
 
   return (
     <>
-      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={140} />
+      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={100} />
       <mesh position={[0, 0, 0]}>
         <sphereGeometry args={[10, 32, 32]} />
         <meshStandardMaterial
           color={sphereColor}
-          metalness={1}
-          roughness={0.2}
+          metalness={isDark ? 1 : 0.8} // Full metallic in dark mode for bright reflections
+          roughness={isDark ? 0.1 : 0.2} // Smoother in dark mode for sharper white highlights
         />
       </mesh>
     </>
