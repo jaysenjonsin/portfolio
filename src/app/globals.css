@@ -14,7 +14,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 0 0% 90%;
     --foreground: 0 0% 10%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
@@ -36,5 +36,29 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes grain-wave {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes grain-wave-diagonal {
+  0% {
+    transform: translate(-140%, -140%);
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(140%, 140%);
   }
 }
