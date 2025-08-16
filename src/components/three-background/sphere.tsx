@@ -30,16 +30,9 @@ export default function Sphere() {
 
   return (
     <>
-      <OrthographicCamera
-        makeDefault
-        position={isDark ? [0, 0, 100] : [0, 0, 5]} // Much closer camera position in light mode
-        zoom={isDark ? 140 : 140} // Keep same zoom but move camera closer
-      />
-      <mesh position={isDark ? [2, 0, 0] : [0, 0, 0]}>
-        {' '}
-        {/* Center the sphere in light mode */}
-        <sphereGeometry args={isDark ? [4.25, 64, 64] : [10, 32, 32]} />{' '}
-        {/* Much larger sphere in light mode */}
+      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={140} />
+      <mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[10, 32, 32]} />
         <meshStandardMaterial
           color={sphereColor}
           metalness={1}
