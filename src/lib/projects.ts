@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     id: 'Glassdoor',
     title: 'Glassdoor',
-    description: 'Description 1',
+    description: 'growing user engagement and content contribution @ Glassdoor',
     longDescription: 'Long Description 1',
     technologies: ['Technology 1', 'Technology 2'],
     year: '2021',

@@ -6,11 +6,10 @@ import { Footer } from '../../components/footer';
 export default function About() {
   return (
     <div>
-      <div>
+      <div className='font-mono text-sm leading-relaxed max-w-lg mb-16'>
         Outside of work, you can find me reading, gymming, making music or going
         to the movies!
       </div>
-      //SKILLS SECTION
       <section className='mb-16'>
         <h2 className='font-mono text-sm mb-4'>skills</h2>
         <div className='space-y-4'>
