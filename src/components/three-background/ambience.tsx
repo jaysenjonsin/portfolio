@@ -6,11 +6,11 @@ import { Environment, Lightformer } from '@react-three/drei';
 export default function Ambience() {
   // Smooth constant rotation around the sphere
   useFrame((state) => {
-    const t = state.clock.elapsedTime / 2; // Slow, smooth rotation
+    const t = state.clock.elapsedTime / 3.5; // Slow, smooth rotation
     const radius = 15;
     state.camera.position.set(
       Math.sin(t) * radius, // Smooth circular motion
-      Math.sin(t * 0.3) * 3, // Gentle vertical drift
+      Math.sin(t * 0.3) * 2, // Gentle vertical drift
       Math.cos(t) * radius // Circular motion
     );
     state.camera.lookAt(0, 0, 0);
