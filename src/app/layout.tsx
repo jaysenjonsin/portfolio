@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='relative min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8'>
+          <div className='min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8'>
             <ThreeBackground />
             <Header />
             {children}

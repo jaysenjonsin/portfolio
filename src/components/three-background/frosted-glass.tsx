@@ -39,8 +39,8 @@ export default function FrostedGlass({ children }: FrostedGlassProps) {
     transparent: true,
     opacity: isDark ? 0.95 : 0.5, // Less transparent in dark mode for stronger contrast
     distortion: 0.9,
-    distortionScale: isDark ? 0.5 : 0.3, // Stronger scaling in dark mode for pronounced grain
-    temporalDistortion: isDark ? 0.08 : 0.05, // More temporal distortion in dark mode
+    distortionScale: 0.5, // Stronger scaling in dark mode for pronounced grain
+    temporalDistortion: 0.08,
   };
 
   return (
