@@ -6,6 +6,7 @@ import { Footer } from '../../components/footer';
 export default function About() {
   return (
     <div>
+      <h2 className='font-mono text-sm mb-4'>about me</h2>
       <div className='font-mono text-sm leading-relaxed max-w-lg mb-16'>
         Outside of work, you can find me reading, gymming, making music or going
         to the movies!
