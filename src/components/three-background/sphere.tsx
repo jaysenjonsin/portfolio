@@ -30,7 +30,7 @@ export default function Sphere() {
 
   return (
     <>
-      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={100} />
+      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={95} />
       <mesh position={[0, 0, 0]}>
         <sphereGeometry args={[10, 32, 32]} />
         <meshStandardMaterial

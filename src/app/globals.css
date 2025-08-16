@@ -18,7 +18,7 @@ body {
     --foreground: 0 0% 10%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
-    --border: 0 0% 90%;
+    --border: 0 0% 10%;
   }
 
   .dark {
