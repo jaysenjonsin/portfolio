@@ -4,6 +4,9 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
+import { OrganicBackground } from '../components/organic-background';
+import SubtleBackground from '../components/subtle-background';
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -36,6 +39,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className='min-h-screen flex flex-col justify-between max-w-2xl mx-auto px-4 py-8 border-0.5 border-gray-300 dark:border-gray-800 rounded-lg'>
+            <OrganicBackground />
+            <SubtleBackground />
             <Header />
             {children}
             <Footer />
