@@ -31,13 +31,13 @@ export default function FrostedGlass({ children }: FrostedGlassProps) {
 
   // Enhanced grain and contrast for both modes
   const glassProps = {
-    samples: isDark ? 1 : 3,
+    samples: isDark ? 1 : 2,
     thickness: 0.15,
-    chromaticAberration: isDark ? 0.02 : 0.02, // More chromatic aberration in dark mode for grain
+    chromaticAberration: 0.02,
     anisotropy: isDark ? 2 : 2,
     roughness: isDark ? 0.9 : 0.8, // Higher roughness in dark mode for more grain texture
     transparent: true,
-    opacity: isDark ? 0.95 : 0.5, // Less transparent in dark mode for stronger contrast
+    opacity: isDark ? 0.95 : 0.55, // Less transparent in dark mode for stronger contrast
     distortion: 0.9,
     distortionScale: 0.5, // Stronger scaling in dark mode for pronounced grain
     temporalDistortion: 0.08,

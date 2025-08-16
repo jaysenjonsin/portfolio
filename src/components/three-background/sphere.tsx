@@ -36,7 +36,7 @@ export default function Sphere() {
         <meshStandardMaterial
           color={sphereColor}
           metalness={isDark ? 1 : 0.8} // Full metallic in dark mode for bright reflections
-          roughness={isDark ? 0.1 : 0.2} // Smoother in dark mode for sharper white highlights
+          roughness={isDark ? 0.2 : 0.2} // Smoother in dark mode for sharper white highlights
         />
       </mesh>
     </>

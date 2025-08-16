@@ -7,9 +7,7 @@ export const Footer = () => {
       <Link href='/'>
         <p className='font-mono text-sm'>© Jason Johnson</p>
       </Link>
-      <Link href='/'>
-        <GradientShift />
-      </Link>
+      <Link href='/'>{/* <GradientShift /> */}</Link>
     </footer>
   );
 };
