@@ -36,7 +36,17 @@ export default function ThreeBackground() {
 
     // Small delay to ensure DOM is ready
     const timer = setTimeout(() => {
-      setWebGLSupported(hasWebGL());
+      const webglSupport = hasWebGL();
+      setWebGLSupported(webglSupport);
+
+      // If WebGL is not supported, trigger content show after welcome screen
+      if (!webglSupport) {
+        setTimeout(() => {
+          setShowWelcome(false);
+          document.documentElement.classList.add('content-ready');
+          console.log('Content ready triggered (WebGL not supported)');
+        }, 500);
+      }
     }, 100);
 
     return () => clearTimeout(timer);
