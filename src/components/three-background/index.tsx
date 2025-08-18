@@ -29,6 +29,7 @@ function hasWebGL(): boolean {
 export default function ThreeBackground() {
   const [webGLSupported, setWebGLSupported] = useState<boolean | null>(null);
   const [isClient, setIsClient] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
@@ -41,17 +42,38 @@ export default function ThreeBackground() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Don't render anything until we're on client side and have checked WebGL
-  if (!isClient || webGLSupported === null) {
-    return null;
-  }
+  const handleCanvasReady = () => {
+    // Wait for welcome screen duration, then hide it
+    // Timing matches the pulse animation cycle
+    setTimeout(() => {
+      setShowWelcome(false);
+      // Trigger content show globally
+      document.documentElement.classList.add('content-ready');
+    }, 500); // Half a second for faster loading
+  };
 
-  // If WebGL is not supported, return null (fallback to CSS background)
-  if (!webGLSupported) {
-    console.log('WebGL not supported, using fallback background');
-    return null;
-  }
+  // Always render the same structure to avoid hydration mismatches
+  return (
+    <>
+      {/* Only render canvas when client-side and WebGL is supported */}
+      {isClient && webGLSupported && (
+        <ThreeCanvas onReady={handleCanvasReady} />
+      )}
 
-  // Render the Three.js canvas
-  return <ThreeCanvas />;
+      {/* Always render welcome overlay initially, hide it when ready */}
+      {(!isClient || webGLSupported === null || showWelcome) && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-background'>
+          <h1
+            className={`text-4xl font-mono ${
+              isClient && webGLSupported !== null
+                ? 'welcome-pulse'
+                : 'animate-pulse'
+            }`}
+          >
+            Welcome
+          </h1>
+        </div>
+      )}
+    </>
+  );
 }
