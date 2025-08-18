@@ -7,7 +7,7 @@ export default function WorkPage() {
       <main className='flex-1 py-16'>
         <h1 className='text-3xl font-mono mb-8'>work</h1>
 
-        <div className='space-y-16'>
+        <div className='space-y-8'>
           {projects
             .filter((project) => project.category === 'work')
             .map((project) => (
@@ -20,7 +20,7 @@ export default function WorkPage() {
                   href={`/project/${project.id}`}
                   className='font-mono text-sm hover:underline'
                 >
-                  view project →
+                  view work →
                 </Link>
               </section>
             ))}
