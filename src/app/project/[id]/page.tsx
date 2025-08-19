@@ -13,7 +13,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     <main className='flex-1 py-16'>
       <div className='mb-8'>
         <Link href='/work' className='font-mono text-sm hover:underline'>
-          ← back to projects
+          ← back
         </Link>
       </div>
 
@@ -47,26 +47,40 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           </div>
 
           <div className='pt-8 space-y-2'>
-            <div>
-              <Link
-                href=''
-                target='_blank'
-                rel='noopener noreferrer'
-                className='font-mono text-sm hover:underline inline-flex items-center'
-              >
-                — view on github
-              </Link>
-            </div>
+            {project.githubUrl && (
+              <div>
+                <Link
+                  href={project.githubUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='font-mono text-sm hover:underline inline-flex items-center'
+                >
+                  — view on github
+                </Link>
+              </div>
+            )}
 
             {project.liveUrl && (
               <div>
                 <Link
-                  href=''
+                  href={project.liveUrl}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='font-mono text-sm hover:underline inline-flex items-center'
                 >
                   — view live site
+                </Link>
+              </div>
+            )}
+            {project.articleUrl && (
+              <div>
+                <Link
+                  href={project.articleUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='font-mono text-sm hover:underline inline-flex items-center'
+                >
+                  — read article
                 </Link>
               </div>
             )}
