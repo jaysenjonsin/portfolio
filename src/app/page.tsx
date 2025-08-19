@@ -1,8 +1,6 @@
 import { ThemeToggle } from '@/components/theme-toggle';
 import { projects } from '@/lib/projects';
-import { Header } from '@/components/header';
 import Link from 'next/link';
-import { Footer } from '@/components/footer';
 export default function Home() {
   return (
     <main className='flex-1 py-16'>
