@@ -34,7 +34,7 @@ export const projects: Project[] = [
   {
     id: 'Konvene',
     title: 'Konvene',
-    description: 'Streamlining convention organization @ Konvene',
+    description: 'streamlining convention organization @ Konvene',
     longDescription: 'Long Description 2',
     technologies: ['Technology 3', 'Technology 4'],
     year: '2022',
@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     id: 'Knote',
     title: 'Knote',
-    description: 'Making learning more efficient @ Knote',
+    description: 'making learning more efficient @ Knote',
     longDescription: 'Long Description 3',
     technologies: ['Technology 5', 'Technology 6'],
     year: '2023',
