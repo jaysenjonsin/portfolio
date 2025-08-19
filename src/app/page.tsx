@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className='flex-1 py-16'>
       <section className='mb-16'>
-        <h1 className='text-3xl font-mono mb-8'>👋 Hi, I'm Jason.</h1>
+        <h1 className='text-3xl font-mono mb-8'> Hi, I'm Jason.</h1>
         <p className='font-mono text-sm leading-relaxed max-w-lg'>
           I'm a Full Stack Developer focused on building responsive, accessible,
           and performant web applications with modern technologies. Currently @
