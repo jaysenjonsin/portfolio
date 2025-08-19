@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { getProjectById } from '@/lib/projects';
 import { notFound } from 'next/navigation';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { ProjectCarousel } from '@/components/project-carousel';
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = getProjectById(params.id);
@@ -13,7 +12,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return (
     <main className='flex-1 py-16'>
       <div className='mb-8'>
-        <Link href='/projects' className='font-mono text-sm hover:underline'>
+        <Link href='/work' className='font-mono text-sm hover:underline'>
           ← back to projects
         </Link>
       </div>
@@ -35,18 +34,18 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             <ProjectCarousel projectId={params.id} />
           </div>
 
-          <div className='pt-4'>
-            <h2 className='font-mono text-sm mb-2'>technologies</h2>
-            <ul className='flex flex-wrap gap-2'>
+          <div>
+            <h3 className='font-mono text-xs mb-2'>Technologies</h3>
+            <div className='flex flex-wrap gap-1'>
               {project.technologies.map((tech) => (
-                <li
+                <span
                   key={tech}
                   className='font-mono text-xs px-2 py-1 border border-border rounded-sm'
                 >
                   {tech}
-                </li>
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div className='pt-8 space-y-2'>

@@ -8,16 +8,14 @@ export default function About() {
     <div>
       <h2 className='font-mono text-sm mb-4'>about me</h2>
       <div className='font-mono text-sm leading-relaxed max-w-lg mb-16'>
-        When I'm not coding, you can find me reading, gymming, making music or going
-        to the movies!
+        When I'm not coding, you can find me reading, gymming, making music or
+        going to the movies!
       </div>
       <section className='mb-16'>
         <h2 className='font-mono text-sm mb-4'>skills</h2>
         <div className='space-y-4'>
           <div>
-            <h3 className='font-mono text-xs mb-2 text-muted-foreground'>
-              languages
-            </h3>
+            <h3 className='font-mono text-xs mb-2'>languages</h3>
             <div className='flex flex-wrap gap-1'>
               {[
                 'TypeScript',
@@ -37,9 +35,7 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className='font-mono text-xs mb-2 text-muted-foreground'>
-              libraries/frameworks
-            </h3>
+            <h3 className='font-mono text-xs mb-2'>libraries/frameworks</h3>
             <div className='flex flex-wrap gap-1'>
               {[
                 'React',
@@ -63,7 +59,7 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className='font-mono text-xs mb-2 text-muted-foreground'>
+            <h3 className='font-mono text-xs mb-2'>
               development tools/platforms
             </h3>
             <div className='flex flex-wrap gap-1'>
@@ -81,9 +77,7 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className='font-mono text-xs mb-2 text-muted-foreground'>
-              databases
-            </h3>
+            <h3 className='font-mono text-xs mb-2'>databases</h3>
             <div className='flex flex-wrap gap-1'>
               {[
                 'SQL',

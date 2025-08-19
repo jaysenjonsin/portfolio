@@ -20,10 +20,7 @@ export default function Home() {
         <ul className='font-mono text-sm space-y-2'>
           {projects.slice(0, 4).map((project) => (
             <li key={project.id}>
-              <Link
-                href={`/projects/${project.id}`}
-                className='hover:underline'
-              >
+              <Link href={`/project/${project.id}`} className='hover:underline'>
                 — {project.title}
               </Link>
             </li>
