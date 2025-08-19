@@ -48,3 +48,7 @@ export const projects: Project[] = [
     category: 'work',
   },
 ];
+
+export function getProjectById(id: string): Project | undefined {
+  return projects.find((project) => project.id === id);
+}
