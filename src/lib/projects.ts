@@ -9,6 +9,7 @@ export type Project = {
   articleUrl?: string;
   year: string;
   category: 'work' | 'personal' | 'open-source';
+  images?: string[];
 };
 
 export const projects: Project[] = [
@@ -82,6 +83,5 @@ export const projects: Project[] = [
   },
 ];
 
-export function getProjectById(id: string): Project | undefined {
-  return projects.find((project) => project.id === id);
-}
+export const getProjectById = (id: string): Project | undefined =>
+  projects.find((project) => project.id === id);

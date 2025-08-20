@@ -2,20 +2,18 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Project } from '@/lib/projects';
 
 interface ProjectCarouselProps {
-  projectId: string;
+  project: Project;
 }
 
-export function ProjectCarousel({ projectId }: ProjectCarouselProps) {
+export const ProjectCarousel = ({ project }: ProjectCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Generic placeholder images for now
-  const images = [
-    `/placeholder.svg?height=400&width=600&query=project screenshot 1 for ${projectId}`,
-    `/placeholder.svg?height=400&width=600&query=project screenshot 2 for ${projectId}`,
-    `/placeholder.svg?height=400&width=600&query=project screenshot 3 for ${projectId}`,
-    `/placeholder.svg?height=400&width=600&query=project screenshot 4 for ${projectId}`,
+  // Direct access to images from project object
+  const images = project.images || [
+    `/placeholder.svg?height=400&width=600&query=no images for ${project.id}`,
   ];
 
   const goToPrevious = () => {
@@ -35,7 +33,7 @@ export function ProjectCarousel({ projectId }: ProjectCarouselProps) {
       <div className='relative aspect-[3/2] bg-muted rounded-sm overflow-hidden'>
         <img
           src={images[currentIndex] || '/placeholder.svg'}
-          alt={`Project screenshot ${currentIndex + 1}`}
+          alt={`${project.title} screenshot ${currentIndex + 1}`}
           className='w-full h-full object-cover'
         />
 
@@ -74,4 +72,4 @@ export function ProjectCarousel({ projectId }: ProjectCarouselProps) {
       </div>
     </div>
   );
-}
+};

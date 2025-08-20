@@ -26,9 +26,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </header>
 
         <div className='space-y-4'>
-          <div className=''>
-            <ProjectCarousel projectId={params.id} />
-          </div>
+          <ProjectCarousel project={project} />
           <p className='font-mono text-sm leading-relaxed'>
             {project.longDescription}
           </p>

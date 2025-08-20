@@ -44,14 +44,14 @@ export default function Home() {
               — GitHub
             </Link>
           </li>
-          {/* <li>
-              <Link
-                href='https://github.com/jaysenjonsin'
-                className='hover:underline inline-flex items-center'
-              >
-                — github
-              </Link>
-            </li> */}
+          <li>
+            <Link
+              href='mailto:jasoncjohnson626@gmail.com'
+              className='hover:underline inline-flex items-center'
+            >
+              — email
+            </Link>
+          </li>
         </ul>
       </section>
     </main>
