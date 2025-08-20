@@ -8,8 +8,9 @@ export type Project = {
   liveUrl?: string;
   articleUrl?: string;
   year: string;
-  category: 'work' | 'personal' | 'open-source';
+  category: 'work' | 'project';
   images?: string[];
+  onHomepage?: boolean;
 };
 
 export const projects: Project[] = [
@@ -34,6 +35,14 @@ export const projects: Project[] = [
     year: '2021',
     category: 'work',
     liveUrl: 'https://www.glassdoor.com/surveys/start',
+    images: [
+      '/projects/glassdoor/glassdoorHomepage.gif',
+      '/projects/glassdoor/addNewEmployer.gif',
+      // '/projects/glassdoor/cRegFlow.gif',
+      '/projects/glassdoor/cRegFlow.mp4',
+      '/projects/glassdoor/industryDetails.gif',
+    ],
+    onHomepage: true,
   },
   {
     id: 'Konvene',
@@ -57,6 +66,7 @@ export const projects: Project[] = [
     ],
     year: '2022',
     category: 'work',
+    onHomepage: true,
   },
   {
     id: 'Knoted',
@@ -67,6 +77,7 @@ export const projects: Project[] = [
     technologies: ['Technology 5', 'Technology 6'],
     year: '2023',
     category: 'work',
+    onHomepage: true,
   },
   {
     id: 'Scribe',
@@ -74,12 +85,75 @@ export const projects: Project[] = [
     description: 'generating automated tests @ Scribe',
     longDescription:
       'As a Software Engineer, I contributed to building Scribe, an open-source tool developed under the OS Labs accelerator that automated Jest test generation for GraphQL schemas and resolvers. On the frontend, I created a React interface with an integrated code editor for writing and saving GraphQL queries/mutations, and implemented Redux Toolkit for centralized state management, improving readability and reducing prop-drilling complexity. On the backend, I configured an Express.js/Node.js server to generate type-safe unit and integration tests aligned with Apollo GraphQL standards. I also optimized API performance with Redis caching, cutting redundant database queries and improving response times by up to 80%.',
-    technologies: ['Technology 7', 'Technology 8'],
+    technologies: [
+      'React',
+      'Typescript',
+      'Node.js',
+      'Express.js',
+      'GraphQL',
+      'Redis',
+      'Apollo GraphQL',
+      'Redux Toolkit',
+      'Prisma',
+      'Husky',
+    ],
     year: '2024',
     category: 'work',
     githubUrl: 'https://github.com/oslabs-beta/Scribe-for-GraphQL',
     articleUrl:
       'https://medium.com/@scribegraphql/writing-jest-tests-for-graphql-scribe-graphql-387e414eea0c',
+    images: [
+      '/projects/scribe/scribeHomepage.png',
+      '/projects/scribe/scribeGenerateTest.gif',
+      '/projects/scribe/scribeSignUp.png',
+    ],
+  },
+  {
+    id: 'Tasket',
+    title: 'Tasket',
+    description: 'managing workspaces and tasks w/ Tasket',
+    longDescription:
+      'Created a full-stack Next.js 14 application, creating a robust workspace/task management system using Server Components for initial rendering, Appwrite for backend services and Hono for API routing, achieving a 20% faster initial page load. Built a task management interface featuring a responsive data table, drag-and-drop Kanban board, and interactive calendar view, implementing real-time updates and synchronized state management across all views using React Query and custom React hooks. Ensured strict end-to-end type safety across 30+ API routes and database models using TypeScript and Zod, achieving end-to-end schema coverage and improved runtime reliability.',
+    technologies: [
+      'Next.js 14',
+      'React',
+      'TypeScript',
+      'Appwrite',
+      'Hono',
+      'React Query',
+      'Zod',
+      'Server Components',
+    ],
+    year: '2025',
+    category: 'project',
+  },
+  {
+    id: 'EventFinder',
+    title: 'EventFinder',
+    description: 'finding and managing live events w/ EventFinder',
+    longDescription:
+      "Architectured a scalable event discovery platform using React, TypeScript, and Node.js, featuring real-time event search, geolocation integration, event details and filtering capabilities. Engineered an autocomplete search interface to prevent rate limiting while providing real-time suggestions from Ticketmaster's API.",
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Ticketmaster API',
+      'Geolocation',
+      'Autocomplete',
+    ],
+    year: '2022-2023',
+    category: 'project',
+  },
+  {
+    id: 'Emilia',
+    title: 'Emilia',
+    description: 'Aviation Inspired Game - 1st Place Winner',
+    longDescription:
+      'Delivered Emilia from inception to completion within 72 hours, utilizing React and Node.js. Awarded 1st place overall among 100+ individual participants at the Aviation Hack 2023 hackathon.',
+    technologies: ['React', 'Node.js'],
+    year: '2023',
+    category: 'project',
+    onHomepage: true,
   },
 ];
 

@@ -14,19 +14,22 @@ export default function Home() {
       </section>
 
       <section className='mb-16'>
-        <h2 className='font-mono text-sm mb-4'>latest work</h2>
         <ul className='font-mono text-sm space-y-2'>
-          {projects.slice(0, 4).map((project) => (
-            <li key={project.id}>
-              <Link href={`/project/${project.id}`} className='hover:underline'>
-                — {project.title}
-              </Link>
-            </li>
-          ))}
+          {projects
+            .filter((project) => project.onHomepage)
+            .map((project) => (
+              <li key={project.id}>
+                <Link
+                  href={`/project/${project.id}`}
+                  className='hover:underline'
+                >
+                  — {project.title}
+                </Link>
+              </li>
+            ))}
         </ul>
       </section>
       <section>
-        <h2 className='font-mono text-sm mb-4'>contact</h2>
         <ul className='font-mono text-sm space-y-2'>
           <li>
             <Link

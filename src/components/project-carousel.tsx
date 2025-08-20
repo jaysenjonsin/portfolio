@@ -30,12 +30,35 @@ export const ProjectCarousel = ({ project }: ProjectCarouselProps) => {
 
   return (
     <div className='relative w-full max-w-2xl mx-auto'>
-      <div className='relative aspect-[3/2] bg-muted rounded-sm overflow-hidden'>
-        <img
-          src={images[currentIndex] || '/placeholder.svg'}
-          alt={`${project.title} screenshot ${currentIndex + 1}`}
-          className='w-full h-full object-cover'
-        />
+      <div className='relative bg-muted rounded-sm overflow-hidden'>
+        {images[currentIndex]?.endsWith('.mp4') ? (
+          <video
+            src={images[currentIndex]}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='w-full h-80 object-cover'
+            style={{
+              objectPosition:
+                images[currentIndex] === '/projects/glassdoor/cRegFlow.mp4'
+                  ? 'center bottom'
+                  : 'center center',
+            }}
+          />
+        ) : (
+          <img
+            src={images[currentIndex] || ''}
+            alt={`${project.title} screenshot ${currentIndex + 1}`}
+            className='w-full h-80 object-cover'
+            style={{
+              objectPosition:
+                images[currentIndex] === '/projects/glassdoor/cRegFlow.gif'
+                  ? 'center bottom'
+                  : 'center center',
+            }}
+          />
+        )}
 
         {/* Navigation buttons */}
         <button
